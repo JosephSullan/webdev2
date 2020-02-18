@@ -1,23 +1,11 @@
-/*
-    Forms are important. This exercise will teach you how to process the traditional (non-AJAX) web form.
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
 
-    Write a route ('/form') that processes HTML form input
-    (<form><input name="str"/></form>) and prints the value of str backwards.
-*/
+app.use(bodyParser.urlencoded({extended: false}))
 
-'use strict';
+app.post('/form', function(req, res) {
+    res.send(req.body.str.split('').reverse().join(''))
+})
 
-const express = require('express');
-const app = express();
-const bodyparser = require('body-parser');
-
-const port = process.argv[2];
-
-app.use(bodyparser.urlencoded({extended: false}));
-
-app.post('/form', (req, res) => {
-    const reversedString = req.body.str.split('').reverse().join('');
-    res.end(reversedString);
-});
-
-app.listen(port);
+app.listen(process.argv[2])
