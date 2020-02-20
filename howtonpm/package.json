@@ -1,0 +1,21 @@
+{
+  "name": "@josephsullan/howtonpm",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "how-to-npm",
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "how-to-npm": "^2.5.1"
+  },
+  "devDependencies": {},
+  "description": "few words",
+  "repository": {
+    "type": "git",
+    "url": "{README.md}"
+  }
+}
